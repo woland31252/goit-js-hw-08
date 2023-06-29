@@ -6,8 +6,7 @@ import { galleryItems } from './gallery-items';
 // Change code below this line
 const gallery = document.querySelector('.gallery');
 const createGallery = galleryItems
-  .map(image => {
-    return `
+  .map(image => `
       <a class="gallery__link" href="${image.original}">
         <img
           class="gallery__image"
@@ -15,13 +14,12 @@ const createGallery = galleryItems
           alt="${image.description}"
         />
       </a>
-  `;
-  })
-  .join('');
+  `).join('');
 gallery.insertAdjacentHTML('beforeend', createGallery);
 
 new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
+  captionPosition: 'bottom',
 });
 console.log(galleryItems);
