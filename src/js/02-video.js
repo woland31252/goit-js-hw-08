@@ -12,11 +12,11 @@ function onPlay(e) {
 player.getVideoTitle().then(function (title) {
   console.log('title:', title);
 });
-const currentTame = localStorage.getItem('videoplayer-current-time');
-const startTame = JSON.parse(currentTame);
-console.log(startTame);
+const currentTime = localStorage.getItem('videoplayer-current-time');
+const startTime = JSON.parse(currentTime);
+console.log(startTime);
 player
-  .setCurrentTime(currentTame)
+  .setCurrentTime(currentTime)
   .then(function (seconds) {})
   .catch(function (error) {
     switch (error.name) {
